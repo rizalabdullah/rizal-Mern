@@ -14,7 +14,7 @@ const Home = () => {
   }, [] );
 
   const getProduct = async () => {
-    const response = await axios.get(`http://localhost:5000/api/v3/product`);
+    const response = await axios.get(`http://mern-rizal.herokuapp.com/api/v3/product`);
     setProduct(response.data);
     console.log(response);
   }
