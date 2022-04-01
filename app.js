@@ -9,7 +9,7 @@ const productRouterV3 = require("./app/product_v3/routes");
 //const productRouterV4 = require("./app/product_v4/routes");
 const logger = require("morgan");
 const cors = require("cors");
-const port = process.env.API_URL ;
+const port = process.env.PORT || 5000 ;
 
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
