@@ -14,13 +14,13 @@ const Home = () => {
   }, [] );
 
   const getProduct = async () => {
-    const response = await axios.get(`http://localhost:5000/api/v3/product`);
+    const response = await axios.get(`/api/v3/product`);
     setProduct(response.data);
     console.log(response);
   }
 
   const deleteProducts = async (id) => {
-   await axios.delete(`http://localhost:5000/api/v3/product/${id}`);
+   await axios.delete(`/api/v3/product/${id}`);
     getProduct();
     
   }

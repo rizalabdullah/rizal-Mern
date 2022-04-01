@@ -32,9 +32,9 @@ app.use(`/api/v3`, productRouterV3);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+   app.get('*', (req, res) => {
+     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     });   
   }
 
-app.listen(port, () => console.log(`listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`listening on port ${port}`));
