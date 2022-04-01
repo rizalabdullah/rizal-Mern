@@ -24,7 +24,7 @@ const store = (req, res) => {
     if(image){
         const target = path.join(__dirname, "../../uploads", image.originalname);
         fs.renameSync(image.path, target);
-        db.collection(`products`).insertOne({name, price, stock, status, image_url : `http://localhost:${port}/public/${image.originalname}`})
+        db.collection(`products`).insertOne({name, price, stock, status, image_url : `https://mern-rizal.herokuapp.com/public/${image.originalname}`})
         .then(result => res.send(result))
         .catch(error => res.send(error));
     }
@@ -45,7 +45,7 @@ const update = (req, res) => {
         const target = path.join(__dirname, "../../uploads", image.originalname);
         fs.renameSync(image.path, target);
        
-        db.collection("products").updateOne({"_id":ObjectId(id)},{$set:{"name":req.body.name, "price":req.body.price, "stock":req.body.stock, "status":req.body.status, "image_url": `http://localhost:${port}/public/${image.originalname}`}})
+        db.collection("products").updateOne({"_id":ObjectId(id)},{$set:{"name":req.body.name, "price":req.body.price, "stock":req.body.stock, "status":req.body.status, "image_url": `https://mern-rizal.herokuapp.com/public/${image.originalname}`}})
       .then(result => res.send(result))
       .catch(error => res.send(error));    
     }
