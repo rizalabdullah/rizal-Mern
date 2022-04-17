@@ -23,7 +23,7 @@ const Tambah = () => {
   data.append(`stock`, stock);
   data.append(`image`, image);
   
-    await axios.post(`/api/v3/product/`, data)
+    await axios.post(`/api/v4/product/`, data)
   .then(() => {
     history.push(`/`);
   })

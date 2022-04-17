@@ -2,7 +2,7 @@ const { ObjectId } = require("mongodb");
 const Product = require(`./model`);
 const path = require(`path`);
 const fs = require(`fs`);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 const index = (req,res) => {
     Product.find()
@@ -46,10 +46,15 @@ const update = (req, res) => {
    
     
             
-            Product.findByIdAndUpdate({_id:ObjectId(id), name, price, stock, status, image_url : `http://localhost:${port}/public/${image.originalname}`}) 
+            Product.findByIdAndUpdate(req.params.id, { name, price, stock, status, image_url : `http://localhost:${port}/public/${image.originalname}`}, {new: true}) 
             .then(result => res.send(result))
             .catch(error => res.send(error));
    
+    }
+    else{
+        Product.findByIdAndUpdate(req.params.id, { name, price, stock, status}, {new: true}) 
+        .then(result => res.send(result))
+        .catch(error => res.send(error));
     }
     }
     

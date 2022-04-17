@@ -23,7 +23,7 @@ const updateProduct = async (e) => {
     data.append(`stock`, stock);
     data.append(`image`, image);
 
-   await axios.put(`/api/v3/product/${id}`, data)
+   await axios.put(`/api/v4/product/${id}`, data)
   .then(() => {
     history.push(`/`)
   })
@@ -37,7 +37,7 @@ useEffect(() => {
 },[]);
 
 const getProductById = async () => {
-  const response = await axios.get(`/api/v3/product/${id}`);
+  const response = await axios.get(`/api/v4/product/${id}`);
   setName(response.data.name);
   setPrice(response.data.price); 
   setStock(response.data.stock);

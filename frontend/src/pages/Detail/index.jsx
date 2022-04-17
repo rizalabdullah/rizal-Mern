@@ -17,7 +17,7 @@ const Detail = () => {
   },[]);
   
   const getProductById = async () => {
-    const response = await axios.get(`/api/v3/product/${id}`);
+    const response = await axios.get(`/api/v4/product/${id}`);
     setId(response.data._id);
     setName(response.data.name);
     setPrice(response.data.price); 
