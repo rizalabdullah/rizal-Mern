@@ -2,7 +2,7 @@ const router = require(`express`).Router();
 const multer = require(`multer`);
 const upload = multer({dest: `uploads`});
 const product_v4_Controller = require(`./controller`);
-
+const { police_check } = require('../../middlewares');
 
 router.get(`/product`, product_v4_Controller.index);
 

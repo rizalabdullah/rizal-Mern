@@ -4,6 +4,7 @@ import './index.scss';
 import {useState} from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Navigation from "../../components/Navigation";
 
 const Tambah = () => {
   
@@ -25,7 +26,7 @@ const Tambah = () => {
   
     await axios.post(`/api/v4/product/`, data)
   .then(() => {
-    history.push(`/`);
+    history.push(`/home`);
   })
   .catch((error)=> {
     console.log(error);
@@ -34,6 +35,9 @@ const Tambah = () => {
 
 
   return (
+    <div>
+       <Navigation />
+   
     <div className="main">
       <div className="card">
         <h2>Tambah Produk</h2>
@@ -64,6 +68,8 @@ const Tambah = () => {
 
         </form>
       </div>
+    </div>
+
     </div>
   )
 }

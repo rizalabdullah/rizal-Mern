@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import './index.scss';
 
+import Navigation from "../../components/Navigation";
+
 const Home = () => {
   const [product, setProduct] = useState([]);
   const [search, setSearch] = useState(``);
@@ -30,6 +32,10 @@ const Home = () => {
   })
 
   return(
+
+    <div>
+      <Navigation />
+
     <div className="main">
     
       <Link to="/tambah" className="btn btn-primary">Tambah Produk</Link>
@@ -78,6 +84,7 @@ const Home = () => {
             </tbody>
       </table>
     </div>
+  </div>
   )
 }
 
